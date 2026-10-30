@@ -1,0 +1,125 @@
+{
+    "namespace": "Matomo",
+
+    "bridge_functions": [
+        {
+            "name": "Matomo.Configure",
+            "android": "com.redbit.plugins.matomo.MatomoFunctions.Configure",
+            "ios": "MatomoFunctions.Configure",
+            "description": "Override the build-time Matomo URL / site ID at runtime"
+        },
+        {
+            "name": "Matomo.TrackScreen",
+            "android": "com.redbit.plugins.matomo.MatomoFunctions.TrackScreen",
+            "ios": "MatomoFunctions.TrackScreen",
+            "description": "Track a screen view"
+        },
+        {
+            "name": "Matomo.TrackEvent",
+            "android": "com.redbit.plugins.matomo.MatomoFunctions.TrackEvent",
+            "ios": "MatomoFunctions.TrackEvent",
+            "description": "Track a custom event (category / action / name / value)"
+        },
+        {
+            "name": "Matomo.TrackSearch",
+            "android": "com.redbit.plugins.matomo.MatomoFunctions.TrackSearch",
+            "ios": "MatomoFunctions.TrackSearch",
+            "description": "Track an in-app site search"
+        },
+        {
+            "name": "Matomo.TrackGoal",
+            "android": "com.redbit.plugins.matomo.MatomoFunctions.TrackGoal",
+            "ios": "MatomoFunctions.TrackGoal",
+            "description": "Track a goal conversion"
+        },
+        {
+            "name": "Matomo.SetUserId",
+            "android": "com.redbit.plugins.matomo.MatomoFunctions.SetUserId",
+            "ios": "MatomoFunctions.SetUserId",
+            "description": "Set or clear the Matomo user ID"
+        },
+        {
+            "name": "Matomo.SetDimension",
+            "android": "com.redbit.plugins.matomo.MatomoFunctions.SetDimension",
+            "ios": "MatomoFunctions.SetDimension",
+            "description": "Set or clear a custom dimension sent with every following hit"
+        },
+        {
+            "name": "Matomo.SetOptOut",
+            "android": "com.redbit.plugins.matomo.MatomoFunctions.SetOptOut",
+            "ios": "MatomoFunctions.SetOptOut",
+            "description": "Opt the user out of (or back into) tracking; persisted by the SDK"
+        },
+        {
+            "name": "Matomo.Dispatch",
+            "android": "com.redbit.plugins.matomo.MatomoFunctions.Dispatch",
+            "ios": "MatomoFunctions.Dispatch",
+            "description": "Send queued hits to the Matomo server now"
+        },
+        {
+            "name": "Matomo.StartNewSession",
+            "android": "com.redbit.plugins.matomo.MatomoFunctions.StartNewSession",
+            "ios": "MatomoFunctions.StartNewSession",
+            "description": "Start a new visit with the next hit"
+        },
+        {
+            "name": "Matomo.GetStatus",
+            "android": "com.redbit.plugins.matomo.MatomoFunctions.GetStatus",
+            "ios": "MatomoFunctions.GetStatus",
+            "description": "Get the tracker configuration and opt-out state"
+        }
+    ],
+
+    "android": {
+        "permissions": [
+            "android.permission.INTERNET",
+            "android.permission.ACCESS_NETWORK_STATE"
+        ],
+        "repositories": [
+            {
+                "url": "https://jitpack.io"
+            }
+        ],
+        "dependencies": {
+            "implementation": [
+                "com.github.matomo-org:matomo-sdk-android:4.4"
+            ]
+        }
+    },
+
+    "ios": {
+        "info_plist": {
+            "MatomoURL": "${MATOMO_URL}",
+            "MatomoSiteId": "${MATOMO_SITE_ID}"
+        },
+        "dependencies": {
+            "swift_packages": [
+                {
+                    "url": "https://github.com/matomo-org/matomo-sdk-ios.git",
+                    "version": "7.8.0",
+                    "products": ["MatomoTracker"]
+                }
+            ],
+            "pods": []
+        }
+    },
+
+    "assets": {
+        "android": {
+            "android/res/values/matomo_config.xml": "res/values/matomo_config.xml"
+        }
+    },
+
+    "secrets": {
+        "MATOMO_URL": {
+            "description": "Base URL of your Matomo instance, e.g. https://stats.example.com (matomo.php is appended automatically)",
+            "required": true
+        },
+        "MATOMO_SITE_ID": {
+            "description": "Matomo site ID for this app",
+            "required": true
+        }
+    },
+
+    "events": []
+}

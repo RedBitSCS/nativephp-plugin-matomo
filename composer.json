@@ -1,0 +1,46 @@
+{
+    "name": "redbit/plugin-matomo",
+    "description": "Matomo analytics for NativePHP Mobile, backed by the native Matomo Android and iOS SDKs",
+    "type": "nativephp-plugin",
+    "license": "MIT",
+    "keywords": ["nativephp", "matomo", "analytics", "tracking"],
+    "authors": [
+        {
+            "name": "RedBit",
+            "email": "wouter@redbit.be"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "nativephp/mobile": "^3.0"
+    },
+    "require-dev": {
+        "pestphp/pest": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Redbit\\Matomo\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Redbit\\Matomo\\MatomoServiceProvider"
+            ],
+            "aliases": {
+                "Matomo": "Redbit\\Matomo\\Facades\\Matomo"
+            }
+        },
+        "nativephp": {
+            "manifest": "nativephp.json"
+        }
+    },
+    "scripts": {
+        "test": "pest"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}

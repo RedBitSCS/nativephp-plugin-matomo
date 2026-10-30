@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="matomo_url" translatable="false" tools:ignore="UnusedResources">${MATOMO_URL}</string>
+    <string name="matomo_site_id" translatable="false" tools:ignore="UnusedResources">${MATOMO_SITE_ID}</string>
+</resources>

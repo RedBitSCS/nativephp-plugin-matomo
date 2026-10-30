@@ -21,7 +21,7 @@ class Matomo
     /**
      * Track a screen view.
      *
-     * @param  string  $path  Screen path, e.g. "/quiz/12"
+     * @param  string  $path  Screen path, e.g. "/articles/42"
      * @param  array<int, string>  $dimensions  Dimension index => value, for this hit only
      */
     public function trackScreen(string $path, ?string $title = null, array $dimensions = []): bool

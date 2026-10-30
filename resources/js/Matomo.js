@@ -7,8 +7,8 @@
  * @example
  * import { Matomo } from '../../vendor/redbit/plugin-matomo/resources/js/Matomo.js';
  *
- * await Matomo.trackScreen('/quiz/12', 'Quiz');
- * await Matomo.trackEvent('Quiz', 'Completed', 'Weekly quiz', 8);
+ * await Matomo.trackScreen('/articles/42', 'Article');
+ * await Matomo.trackEvent('Video', 'Play', 'intro-video');
  * await Matomo.setOptOut(true);
  */
 

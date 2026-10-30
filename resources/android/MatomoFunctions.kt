@@ -169,7 +169,7 @@ object MatomoFunctions {
 
     /**
      * Parameters:
-     *   - path: string - screen path, e.g. "/quiz/12"
+     *   - path: string - screen path, e.g. "/articles/42"
      *   - title: (optional) string - human readable screen title
      *   - dimensions: (optional) object - {index: value} for this hit only
      */

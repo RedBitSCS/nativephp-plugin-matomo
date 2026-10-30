@@ -42,7 +42,7 @@ describe('PHP API', function () {
         $matomo = new Redbit\Matomo\Matomo;
 
         expect($matomo->trackScreen('/home'))->toBeFalse();
-        expect($matomo->trackEvent('Quiz', 'Completed'))->toBeFalse();
+        expect($matomo->trackEvent('Video', 'Play'))->toBeFalse();
         expect($matomo->getStatus())->toBeNull();
         expect($matomo->isOptedOut())->toBeNull();
     });
